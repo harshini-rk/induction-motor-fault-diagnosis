@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+env/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Models and artifacts (do not commit large binaries)
+models/*.joblib
+models/*.h5
+models/*.pth
+models/*.pt
+models/*.ckpt
+models/*.npz
+
+# Logs
+*.log
+
+# Distribution / build
+dist/
+build/

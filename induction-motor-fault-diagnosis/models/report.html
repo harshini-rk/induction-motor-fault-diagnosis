@@ -1,0 +1,79 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Model Report</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;padding:20px} h1{color:#333} table{border-collapse:collapse;width:100%;margin-bottom:20px} th,td{border:1px solid #ddd;padding:8px} th{background:#f4f4f4;text-align:left} pre{background:#f8f8f8;padding:10px;border-radius:4px;overflow:auto}</style>
+</head><body>
+<h1>Model Training Report</h1>
+<h2>Models & Metrics</h2>
+<table>
+<tr><th>Model</th><th>Accuracy</th><th>Classification report</th><th>Confusion matrix</th></tr>
+<tr>
+<td>rf</td>
+<td>0.9648
+<td><pre>              precision    recall  f1-score   support
+
+     bearing       0.94      0.93      0.94       426
+     healthy       1.00      1.00      1.00       141
+  inner_race       0.99      0.99      0.99       570
+  outer_race       0.94      0.95      0.95       427
+
+    accuracy                           0.96      1564
+   macro avg       0.97      0.97      0.97      1564
+weighted avg       0.96      0.96      0.96      1564
+</pre></td>
+<td><img src="confusion_rf.png" alt="confusion_rf" style="max-width:350px"></td>
+</tr>
+<tr>
+<td>svm</td>
+<td>0.8779
+<td><pre>              precision    recall  f1-score   support
+
+     bearing       0.71      0.96      0.82       426
+     healthy       1.00      1.00      1.00       141
+  inner_race       0.97      0.93      0.95       570
+  outer_race       0.98      0.68      0.81       427
+
+    accuracy                           0.88      1564
+   macro avg       0.91      0.89      0.89      1564
+weighted avg       0.90      0.88      0.88      1564
+</pre></td>
+<td><img src="confusion_svm.png" alt="confusion_svm" style="max-width:350px"></td>
+</tr>
+<tr>
+<td>knn</td>
+<td>0.8811
+<td><pre>              precision    recall  f1-score   support
+
+     bearing       0.79      0.82      0.80       426
+     healthy       1.00      0.99      1.00       141
+  inner_race       0.93      0.96      0.94       570
+  outer_race       0.87      0.80      0.83       427
+
+    accuracy                           0.88      1564
+   macro avg       0.90      0.89      0.89      1564
+weighted avg       0.88      0.88      0.88      1564
+</pre></td>
+<td><img src="confusion_knn.png" alt="confusion_knn" style="max-width:350px"></td>
+</tr>
+<tr>
+<td>stacking</td>
+<td>0.9661
+<td><pre>              precision    recall  f1-score   support
+
+     bearing       0.94      0.93      0.94       426
+     healthy       1.00      1.00      1.00       141
+  inner_race       1.00      0.99      0.99       570
+  outer_race       0.94      0.96      0.95       427
+
+    accuracy                           0.97      1564
+   macro avg       0.97      0.97      0.97      1564
+weighted avg       0.97      0.97      0.97      1564
+</pre></td>
+<td><img src="confusion_stacking.png" alt="confusion_stacking" style="max-width:350px"></td>
+</tr>
+</table>
+<h2>Notes</h2>
+<ul>
+<li>Best model (by saved reports): <strong>stacking</strong></li>
+<li>Images and models are relative to the <code>models/</code> directory.</li>
+</ul>
+</body></html>
